@@ -89,7 +89,7 @@ class TaskOutputCachingJavaPerformanceTest extends AbstractTaskOutputCacheJavaPe
         result.assertCurrentVersionHasNotRegressed()
 
         where:
-        [testProject, tasks] << scenarios
+        [testProject, tasks] << [[LARGE_JAVA_MULTI_PROJECT, 'assemble --info']]
     }
 
     def "clean #tasks on #testProject with remote https cache"() {
